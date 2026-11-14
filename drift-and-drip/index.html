@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>ELVORA Café | A place where elegance meets comfort, and every cup creates a beautiful moment.</title>
+<meta name="description" content="Hand-poured coffee, fresh bakes and easy pickup orders.">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="7"/><feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -9"/></filter></svg>
+<div class="level" aria-hidden="true"><i id="lv"></i></div>
+<header>
+  <a class="logo" href="#home">ELVORA Café</a>
+  <nav><a href="#menu">Menu</a><a href="#stamps">Stamp card</a><a href="#visit">Visit</a></nav>
+  <span class="pill" id="open">Checking hours</span>
+  <button class="theme" id="acct" aria-label="Your details">👤</button>
+  <button class="theme" id="theme" aria-label="Switch light or dark theme">◐</button>
+  <button class="btn y fab" id="cartBtn">Order<span id="cnt">0</span></button>
+</header>
+
+<main id="top">
+<div class="view on" data-v="home">
+<div class="hero">
+  <div class="goo"><h1><span>Your everyday,</span><span>beautifully brewed.</span></h1></div>
+  <div class="spout" aria-hidden="true"><i class="d" style="animation-delay:0s"></i><i class="d" style="animation-delay:1.4s"></i><i class="d" style="animation-delay:2.8s"></i></div>
+  <p>A little warmth, a little sweetness, and a beautiful cup for every day.</p>
+  <div class="heroRow"><a class="btn y" href="#menu">Start your order</a><a class="btn" style="background:transparent;color:#fff;border-color:#fff" href="#visit">Find us</a></div>
+  <div class="road" aria-hidden="true"><span class="rt">Hot coffee at your door in 20 minutes</span><div class="rider"><svg viewBox="0 0 150 90" width="150" height="90"><g class="bob"><g class="wh"><circle cx="30" cy="68" r="14" fill="none" stroke="#fff" stroke-width="4"/><path d="M30 56v24M18 68h24" stroke="#fff" stroke-width="2"/></g><g class="wh"><circle cx="118" cy="68" r="14" fill="none" stroke="#fff" stroke-width="4"/><path d="M118 56v24M106 68h24" stroke="#fff" stroke-width="2"/></g><rect x="2" y="22" width="44" height="34" rx="5" fill="#E6A95F" stroke="#2A1810" stroke-width="3"/><text x="24" y="46" text-anchor="middle" font-size="20">☕</text><path d="M36 64h50l18-22h10" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/><path d="M118 68l-8-26" stroke="#fff" stroke-width="5" stroke-linecap="round"/><path d="M62 52l8-24 36 12" fill="none" stroke="#E6A95F" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><circle cx="74" cy="15" r="10" fill="#E6A95F" stroke="#2A1810" stroke-width="3"/></g></svg></div></div>
+</div>
+<div class="wrap"><div class="tiles">
+  <a href="#menu"><b>Menu</b><span>Brews, espresso and bites</span></a>
+  <a href="#stamps"><b>Stamp card</b><span>Earn a free drink</span></a>
+  <a href="#visit"><b>Visit</b><span>Hours and location</span></a>
+</div></div>
+</div>
+
+<div class="wrap">
+  <div class="view" data-v="menu"><section id="menu"><button class="back" data-back>← Back</button>
+    <h2>The menu</h2>
+    <p class="sub">Order ahead for pickup. We start your cup when your time comes around.</p>
+    <input id="q" class="search" type="search" placeholder="Search the menu" aria-label="Search the menu">
+    <div class="tabs" id="tabs" role="group" aria-label="Menu category"></div>
+    <div class="menu" id="list"></div>
+  </section></div>
+
+  <div class="view" data-v="stamps"><section id="stamps"><button class="back" data-back>← Back</button>
+    <div class="card">
+      <h2>Your stamp card</h2>
+      <p style="max-width:44ch;margin:0">Every order earns a stamp on this device. Fill all eight and your next drink is free.</p>
+      <div class="stamps" id="st" aria-live="polite"></div>
+      <p id="stmsg" style="margin:0"></p>
+    </div>
+  </section></div>
+
+  <div class="view" data-v="visit"><section id="visit"><button class="back" data-back>← Back</button>
+    <div class="visit">
+      <div>
+        <h2>Come sit a while.</h2>
+        <p class="sub" id="addr"></p>
+        <div id="map" class="mapbox"></div>
+        <a class="btn" id="call" href="#">Message us</a> <a class="btn y" id="gm" target="_blank" rel="noopener" href="#">Open in Google Maps</a>
+      </div>
+      <ul class="hours" id="hours" aria-label="Opening hours"></ul>
+    </div>
+  </section></div>
+  <footer>© <span id="yr"></span> ELVORA Café. Brewed slowly, on purpose.</footer>
+</div>
+</main>
+
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Your order" aria-hidden="true">
+  <button class="q" id="close" aria-label="Close order" style="float:right">✕</button>
+  <div id="dv"></div>
+</aside>
+
+<script src="script.js"></script>
+</body>
+</html>
