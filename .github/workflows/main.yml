@@ -24,21 +24,25 @@ jobs:
         with:
           node-version: 22
           cache: npm
+          cache-dependency-path: drift-and-drip/package-lock.json
 
       - name: Install dependencies
+        working-directory: ./drift-and-drip
         run: npm ci
 
       - name: Build website
+        working-directory: ./drift-and-drip
         run: npm run build
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./drift-and-drip/dist
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
